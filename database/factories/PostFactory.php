@@ -25,7 +25,7 @@ class PostFactory extends Factory
             'title' => $title,
             'slug' => $slug,
             'excerpt' => fake()->sentence,
-            'description' => fake()->sentence,
+            'content' => fake()->sentence,
             'is_published' => fake()->boolean,
             'min_to_read' => fake()->randomDigit(),
         ];
