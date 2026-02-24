@@ -12,20 +12,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = DB::table('posts')
-        //     ->where('id', 1)
-        //     ->first();
-        // dd($posts->description);
+        $posts = DB::table('posts')
+            ->pluck('title');
 
-        // $postsDescription = DB::table('posts')
-        //     ->where('id', 1)
-        //     ->value('description');
-        // dd($postsDescription);
-
-        // $post = DB::table('posts')
-        //     ->find(1);
-        // dd($post, $post->description);
-
+        dd($posts);
     }
 
     /**
