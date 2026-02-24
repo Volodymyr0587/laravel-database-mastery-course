@@ -12,16 +12,20 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')
-            ->select('is_published');
-        // ->distinct()
-        // ->get();
+        // $posts = DB::table('posts')
+        //     ->where('id', 1)
+        //     ->first();
+        // dd($posts->description);
 
-        // dd($posts);
+        // $postsDescription = DB::table('posts')
+        //     ->where('id', 1)
+        //     ->value('description');
+        // dd($postsDescription);
 
-        $added = $posts->addSelect('title')->get();
+        // $post = DB::table('posts')
+        //     ->find(1);
+        // dd($post, $post->description);
 
-        dd($added);
     }
 
     /**
