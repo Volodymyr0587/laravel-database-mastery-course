@@ -22,7 +22,7 @@ class PostSeeder extends Seeder
                 'title' => $post->title,
                 'slug' => $post->slug,
                 'excerpt' => $post->excerpt,
-                'content' => $post->content,
+                'description' => $post->description,
                 'is_published' => $post->is_published,
                 'min_to_read' => $post->min_to_read,
             ]);
