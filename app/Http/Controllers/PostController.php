@@ -13,15 +13,15 @@ class PostController extends Controller
     public function index()
     {
         $posts = DB::table('posts')
-            ->upsert([
+            ->insertGetId([
                 'user_id' => 1,
-                'title' => 'X2',
-                'slug' => 'x',
-                'excerpt' => 'post excerpt',
+                'title' => 'insertGetId',
+                'slug' => 'insertgetid',
+                'excerpt' => 'excerpt',
                 'description' => 'description',
                 'is_published' => true,
                 'min_to_read' => 2,
-            ], ['slug']);
+            ]);
 
         dd($posts);
     }
