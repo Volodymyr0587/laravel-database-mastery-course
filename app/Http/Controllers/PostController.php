@@ -13,42 +13,27 @@ class PostController extends Controller
     public function index()
     {
         // $posts = DB::table('posts')
-        //     ->where('id', 13)
-        //     ->orWhere('id', 11)
-        //     ->update([
-        //         'excerpt' => 'Laravel 12x',
-        //         'description' => 'Laravel 12x',
-        //     ]);
-
-        // dd($posts);
+        //     ->where('is_published', true)
+        //     ->count();
 
         // $posts = DB::table('posts')
-        //     ->where('id', 13)
-        //     ->increment('min_to_read', 7);
-
-        // dd($posts);
+        //     ->where('is_published', true)
+        //     ->sum('min_to_read');
 
         // $posts = DB::table('posts')
-        //     ->where('id', 13)
-        //     ->decrement('min_to_read', 7);
-
-        // dd($posts);
+        //     ->where('is_published', true)
+        //     ->avg('min_to_read');
 
         // $posts = DB::table('posts')
-        //     ->where('id', 13)
-        //     ->incrementEach(['min_to_read', 'lines'], [3, 5]);
+        //     ->where('is_published', true)
+        //     ->max('min_to_read');
 
-        // dd($posts);
+        $posts = DB::table('posts')
+            ->where('is_published', true)
+            ->min('min_to_read');
 
-        // $posts = DB::table('posts')
-        //     ->where('id', 13)
-        //     ->where('title', 'X2')
-        //     ->delete();
 
-        // $posts = DB::table('posts')
-        //     ->truncate();
-
-        // dd($posts);
+        dd($posts);
     }
 
     /**
