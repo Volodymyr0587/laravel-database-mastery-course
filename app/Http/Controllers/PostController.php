@@ -12,16 +12,39 @@ class PostController extends Controller
      */
     public function index()
     {
+        // $posts = DB::table('posts')
+        //     ->where('id', 13)
+        //     ->orWhere('id', 11)
+        //     ->update([
+        //         'excerpt' => 'Laravel 12x',
+        //         'description' => 'Laravel 12x',
+        //     ]);
+
+        // dd($posts);
+
+        // $posts = DB::table('posts')
+        //     ->where('id', 13)
+        //     ->increment('min_to_read', 7);
+
+        // dd($posts);
+
+        // $posts = DB::table('posts')
+        //     ->where('id', 13)
+        //     ->decrement('min_to_read', 7);
+
+        // dd($posts);
+
+        // $posts = DB::table('posts')
+        //     ->where('id', 13)
+        //     ->incrementEach(['min_to_read', 'lines'], [3, 5]);
+
+        // dd($posts);
+
         $posts = DB::table('posts')
-            ->insertGetId([
-                'user_id' => 1,
-                'title' => 'insertGetId',
-                'slug' => 'insertgetid',
-                'excerpt' => 'excerpt',
-                'description' => 'description',
-                'is_published' => true,
-                'min_to_read' => 2,
-            ]);
+            ->updateOrInsert([
+                'excerpt' => 'Laravel 12x',
+                'description' => 'Laravel 12x'
+            ], ['min_to_read' => 53]);
 
         dd($posts);
     }
