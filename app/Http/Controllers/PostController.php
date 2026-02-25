@@ -12,17 +12,18 @@ class PostController extends Controller
      */
     public function index()
     {
-        // if (DB::table('posts')->where('id', 1)->exists()) {
-        //     dd('Woohooo, I have found a match');
-        // } else {
-        //     dd('Ahh, I have not found a match');
-        // }
+        // $posts = DB::table('posts')
+        //     ->whereNot('min_to_read', '>', 5)
+        //     ->get();
 
-        if (DB::table('posts')->where('id', 1)->doesntExist()) {
-            dd('Woohooo, I have found a match');
-        } else {
-            dd('Ahh, I have not found a match');
-        }
+        // dd($posts);
+
+        $posts = DB::table('posts')
+            ->where('min_to_read', '>', 5)
+            ->orWhereNot('is_published', true)
+            ->get();
+
+        dd($posts);
     }
 
     /**
