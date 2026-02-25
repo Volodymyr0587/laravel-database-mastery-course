@@ -40,13 +40,15 @@ class PostController extends Controller
 
         // dd($posts);
 
-        $posts = DB::table('posts')
-            ->updateOrInsert([
-                'excerpt' => 'Laravel 12x',
-                'description' => 'Laravel 12x'
-            ], ['min_to_read' => 53]);
+        // $posts = DB::table('posts')
+        //     ->where('id', 13)
+        //     ->where('title', 'X2')
+        //     ->delete();
 
-        dd($posts);
+        // $posts = DB::table('posts')
+        //     ->truncate();
+
+        // dd($posts);
     }
 
     /**
