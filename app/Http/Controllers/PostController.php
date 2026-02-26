@@ -12,13 +12,19 @@ class PostController extends Controller
      */
     public function index()
     {
+        // $posts = DB::table('posts')
+        //     ->orderBy('id')
+        //     ->lazy();
+
+        // $posts->each(function ($post) {
+        //     dump($post->title);
+        // });
+
+
         $posts = DB::table('posts')
-            ->orderBy('id')
-            ->chunk(150, function ($posts) {
-                foreach ($posts as $post) {
-                    // process posts data
-                }
-            });
+            ->where('id', 1)
+            ->lazyById()
+            ->first();
 
         dump($posts);
     }
