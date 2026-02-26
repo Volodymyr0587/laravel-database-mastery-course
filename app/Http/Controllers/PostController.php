@@ -12,17 +12,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = DB::table('posts')
-        //     ->whereBetween('min_to_read', [1, 6])
-        //     ->get();
-
-        // dd($posts);
-
         $posts = DB::table('posts')
             ->whereNotBetween('min_to_read', [2, 5])
-            ->get();
+            ->get()
+            // ->dd();
+            ->dump();
 
-        dd($posts);
+        // dump($posts);
     }
 
     /**
