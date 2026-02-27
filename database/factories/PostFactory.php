@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 
@@ -23,15 +23,13 @@ class PostFactory extends Factory
         $slug = Str::slug($title);
 
         return [
-            'user_id' => DB::table('users')
-                ->inRandomOrder()
-                ->value('id'),
+            'user_id' => User::factory(),
             'title' => $title,
             'slug' => $slug,
             'excerpt' => fake()->sentence,
             'description' => fake()->sentence,
             'is_published' => fake()->boolean,
-            'min_to_read' => fake()->randomDigit(),
+            'min_to_read' => fake()->numberBetween(1, 15),
         ];
     }
 }

@@ -1,18 +1,162 @@
 [
     {
-        "title": "Post one through Seeder",
-        "slug": "post-one-through-seeder",
-        "excerpt": "Just a excerpt",
-        "description": "Just a description",
+        "title": "Understanding Laravel Service Container",
+        "slug": "understanding-laravel-service-container",
+        "excerpt": "A practical introduction to dependency injection and the Laravel service container.",
+        "description": "The Laravel service container is one of the most powerful features of the framework. In this article, we explore how dependency injection works, how bindings are registered, and how to resolve classes properly in controllers, jobs, and services.",
+        "is_published": true,
+        "min_to_read": 6
+    },
+    {
+        "title": "Eloquent Relationships Explained Clearly",
+        "slug": "eloquent-relationships-explained-clearly",
+        "excerpt": "Learn how hasOne, hasMany, and belongsTo really work under the hood.",
+        "description": "Eloquent relationships allow you to express database connections in a clean and expressive way. We will cover one-to-one, one-to-many, many-to-many relationships, and best practices for structuring your models.",
+        "is_published": true,
+        "min_to_read": 8
+    },
+    {
+        "title": "Database Transactions and Why They Matter",
+        "slug": "database-transactions-and-why-they-matter",
+        "excerpt": "Protect your data integrity using transactions.",
+        "description": "Transactions ensure that multiple database operations succeed or fail together. We’ll look at DB::transaction, deadlocks, and when to use lockForUpdate to prevent race conditions.",
+        "is_published": true,
+        "min_to_read": 7
+    },
+    {
+        "title": "Optimizing Queries in Laravel",
+        "slug": "optimizing-queries-in-laravel",
+        "excerpt": "Avoid N+1 problems and improve performance.",
+        "description": "Slow queries can destroy performance. In this guide, we examine eager loading, indexing strategies, chunking, and lazy collections to handle large datasets efficiently.",
+        "is_published": true,
+        "min_to_read": 9
+    },
+    {
+        "title": "Mastering Laravel Factories and Seeders",
+        "slug": "mastering-laravel-factories-and-seeders",
+        "excerpt": "Generate realistic development data the right way.",
+        "description": "Factories and seeders are essential for testing and local development. Learn how to structure relational data, use has() and for(), and avoid anti-patterns inside factories.",
+        "is_published": true,
+        "min_to_read": 6
+    },
+    {
+        "title": "Full-Text Search in SQLite with FTS5",
+        "slug": "full-text-search-in-sqlite-with-fts5",
+        "excerpt": "Implement powerful search for small and fast applications.",
+        "description": "SQLite FTS5 enables lightning-fast full-text search even in lightweight applications. We’ll explore how to create virtual tables, synchronize data, and perform ranking queries.",
+        "is_published": true,
+        "min_to_read": 10
+    },
+    {
+        "title": "Understanding Indexes in Relational Databases",
+        "slug": "understanding-indexes-in-relational-databases",
+        "excerpt": "How indexes improve query performance.",
+        "description": "Indexes dramatically improve database performance when used correctly. We’ll examine B-tree indexes, composite indexes, and how to analyze execution plans.",
+        "is_published": true,
+        "min_to_read": 8
+    },
+    {
+        "title": "Building Clean Controllers in Laravel",
+        "slug": "building-clean-controllers-in-laravel",
+        "excerpt": "Keep controllers thin and maintainable.",
+        "description": "Controllers should coordinate, not contain business logic. This article demonstrates how to use service classes, form requests, and action classes for cleaner architecture.",
+        "is_published": true,
+        "min_to_read": 5
+    },
+    {
+        "title": "Soft Deletes: When and Why to Use Them",
+        "slug": "soft-deletes-when-and-why-to-use-them",
+        "excerpt": "Preserve data while keeping your database clean.",
+        "description": "Soft deletes allow you to restore records instead of permanently removing them. We’ll explore implementation, global scopes, and common pitfalls.",
+        "is_published": true,
+        "min_to_read": 6
+    },
+    {
+        "title": "Handling Large Datasets with Chunk and Lazy",
+        "slug": "handling-large-datasets-with-chunk-and-lazy",
+        "excerpt": "Process millions of records without running out of memory.",
+        "description": "When working with large datasets, loading everything into memory is a mistake. Learn how chunk(), lazy(), and lazyById() help process data efficiently.",
+        "is_published": true,
+        "min_to_read": 7
+    },
+    {
+        "title": "API Resource Best Practices in Laravel",
+        "slug": "api-resource-best-practices-in-laravel",
+        "excerpt": "Structure your JSON responses properly.",
+        "description": "Laravel API resources provide a clean way to transform models into JSON. We’ll discuss conditional attributes, pagination responses, and versioning strategies.",
+        "is_published": true,
+        "min_to_read": 6
+    },
+    {
+        "title": "Understanding Route Model Binding",
+        "slug": "understanding-route-model-binding",
+        "excerpt": "Simplify your routes with automatic model resolution.",
+        "description": "Route model binding removes boilerplate queries from controllers. Learn implicit vs explicit binding, custom keys, and handling missing models gracefully.",
+        "is_published": true,
+        "min_to_read": 5
+    },
+    {
+        "title": "Slug Generation and SEO Basics",
+        "slug": "slug-generation-and-seo-basics",
+        "excerpt": "Create readable and SEO-friendly URLs.",
+        "description": "Slugs improve user experience and SEO. We’ll explore automatic slug generation, uniqueness handling, and updating slugs safely.",
         "is_published": true,
         "min_to_read": 4
     },
     {
-        "title": "Post two through Seeder",
-        "slug": "post-two-through-seeder",
-        "excerpt": "Just a excerpt",
-        "description": "Just a description",
+        "title": "Database Migrations Done Right",
+        "slug": "database-migrations-done-right",
+        "excerpt": "Write clean, reversible schema changes.",
+        "description": "Migrations define your database structure in code. Learn how to structure up() and down() methods, manage indexes, and avoid destructive changes.",
         "is_published": true,
-        "min_to_read": 4
+        "min_to_read": 7
+    },
+    {
+        "title": "Understanding Pivot Tables in Many-to-Many Relations",
+        "slug": "understanding-pivot-tables-in-many-to-many-relations",
+        "excerpt": "Manage complex relationships effectively.",
+        "description": "Many-to-many relationships require pivot tables. We’ll explore attaching, detaching, syncing, and adding extra pivot attributes.",
+        "is_published": true,
+        "min_to_read": 8
+    },
+    {
+        "title": "Authentication Fundamentals in Laravel",
+        "slug": "authentication-fundamentals-in-laravel",
+        "excerpt": "How Laravel handles authentication internally.",
+        "description": "Laravel provides built-in authentication scaffolding. We’ll examine guards, providers, password hashing, and protecting routes.",
+        "is_published": true,
+        "min_to_read": 9
+    },
+    {
+        "title": "Caching Strategies for Web Applications",
+        "slug": "caching-strategies-for-web-applications",
+        "excerpt": "Reduce load and improve response times.",
+        "description": "Caching is one of the simplest ways to boost performance. Learn about query caching, Redis usage, and cache invalidation strategies.",
+        "is_published": true,
+        "min_to_read": 7
+    },
+    {
+        "title": "Understanding Query Builder vs Eloquent",
+        "slug": "understanding-query-builder-vs-eloquent",
+        "excerpt": "Choose the right tool for the job.",
+        "description": "Eloquent is expressive, but sometimes Query Builder is faster and more suitable. We compare use cases, performance considerations, and readability trade-offs.",
+        "is_published": true,
+        "min_to_read": 6
+    },
+    {
+        "title": "Form Request Validation Deep Dive",
+        "slug": "form-request-validation-deep-dive",
+        "excerpt": "Centralize and clean up validation logic.",
+        "description": "Form Requests help separate validation from controllers. We’ll cover custom rules, conditional validation, and error handling best practices.",
+        "is_published": true,
+        "min_to_read": 6
+    },
+    {
+        "title": "Designing Scalable Laravel Applications",
+        "slug": "designing-scalable-laravel-applications",
+        "excerpt": "Architect your project for long-term growth.",
+        "description": "Scalability starts with clean architecture. Learn about service layers, domain separation, queues, and database optimization for growing applications.",
+        "is_published": true,
+        "min_to_read": 10
     }
 ]
