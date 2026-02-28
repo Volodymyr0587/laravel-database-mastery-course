@@ -13,16 +13,15 @@ class PostController extends Controller
     public function index()
     {
         // $posts = DB::table('posts')
-        //     ->orderBy('title')
-        //     ->orderBy('min_to_read')
+        //     ->limit(10)
         //     ->get();
 
         $posts = DB::table('posts')
-            ->latest()
-            // ->latest('title')
-            // ->oldest()
+            ->offset(10) // SKIP A SPECIFIED NUMBER OF RECORDS FROM THE BEGINNING OF A QUERY
+            ->limit(10)
             ->get();
 
+        // dump($posts->toSql());
         dump($posts);
     }
 
