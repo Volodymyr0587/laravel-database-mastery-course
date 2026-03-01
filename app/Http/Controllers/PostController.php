@@ -12,16 +12,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = DB::table('posts')
-        //     ->limit(10)
-        //     ->get();
-
         $posts = DB::table('posts')
-            ->offset(10) // SKIP A SPECIFIED NUMBER OF RECORDS FROM THE BEGINNING OF A QUERY
-            ->limit(10)
-            ->get();
+            ->when(function ($query) {
+                return $query->where('is_published', true);
+            })->get();
 
-        // dump($posts->toSql());
         dump($posts);
     }
 

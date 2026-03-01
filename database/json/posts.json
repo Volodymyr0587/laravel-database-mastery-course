@@ -12,7 +12,7 @@
         "slug": "eloquent-relationships-explained-clearly",
         "excerpt": "Learn how hasOne, hasMany, and belongsTo really work under the hood.",
         "description": "Eloquent relationships allow you to express database connections in a clean and expressive way. We will cover one-to-one, one-to-many, many-to-many relationships, and best practices for structuring your models.",
-        "is_published": true,
+        "is_published": false,
         "min_to_read": 8
     },
     {
@@ -28,7 +28,7 @@
         "slug": "optimizing-queries-in-laravel",
         "excerpt": "Avoid N+1 problems and improve performance.",
         "description": "Slow queries can destroy performance. In this guide, we examine eager loading, indexing strategies, chunking, and lazy collections to handle large datasets efficiently.",
-        "is_published": true,
+        "is_published": false,
         "min_to_read": 9
     },
     {
@@ -44,7 +44,7 @@
         "slug": "full-text-search-in-sqlite-with-fts5",
         "excerpt": "Implement powerful search for small and fast applications.",
         "description": "SQLite FTS5 enables lightning-fast full-text search even in lightweight applications. We’ll explore how to create virtual tables, synchronize data, and perform ranking queries.",
-        "is_published": true,
+        "is_published": false,
         "min_to_read": 10
     },
     {
