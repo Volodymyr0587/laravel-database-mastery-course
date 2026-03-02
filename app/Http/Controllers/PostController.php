@@ -13,11 +13,14 @@ class PostController extends Controller
     public function index()
     {
         $posts = DB::table('posts')
-            ->when(function ($query) {
-                return $query->where('is_published', true);
-            })->get();
+            ->orderBy('is_published');
+        // ->get();
 
-        dump($posts);
+        // $unorderedPosts = $posts->reorder()->get();
+        $unorderedPosts = $posts->reorder('title', 'desc')->get();
+
+
+        dump($unorderedPosts);
     }
 
     /**
