@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,14 +14,10 @@ class PostController extends Controller
     public function index()
     {
         $posts = DB::table('posts')
-            ->orderBy('is_published');
-        // ->get();
+            ->paginate(5, ['*'], 'page');
 
-        // $unorderedPosts = $posts->reorder()->get();
-        $unorderedPosts = $posts->reorder('title', 'desc')->get();
-
-
-        dump($unorderedPosts);
+        // dump($posts);
+        return view('posts.index', ['posts' => $posts]);
     }
 
     /**
@@ -42,7 +39,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Post $post)
     {
         //
     }
