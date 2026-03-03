@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-200">
+    <div class="min-h-screen bg-linear-to-b from-gray-900 to-gray-800 text-gray-200">
 
         {{-- Header --}}
         <div class="max-w-5xl mx-auto px-6 pt-16 pb-10">
