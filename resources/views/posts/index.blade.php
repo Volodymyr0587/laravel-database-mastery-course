@@ -42,13 +42,16 @@
                     </div>
 
                     {{-- Category badge (optional) --}}
-                    {{-- @if ($post->category)
+                    @if ($categories = $post->categories)
                         <div>
-                            <span class="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                {{ $post->category->name }}
-                            </span>
+                            @foreach ($categories as $category)
+                                <span
+                                    class="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                    {{ $category->name }}
+                                </span>
+                            @endforeach
                         </div>
-                    @endif --}}
+                    @endif
 
                     {{-- Divider --}}
                     <hr class="border-gray-700 mt-8">
