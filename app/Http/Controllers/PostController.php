@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::with('categories')
-            ->cursorPaginate(10);
+            ->paginate(10);
 
         // dump($posts);
         return view('posts.index', ['posts' => $posts]);
