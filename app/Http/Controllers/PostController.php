@@ -14,6 +14,9 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::with('categories')
+            ->where('is_published', true)
+            ->where('min_to_read', '>', 5)
+            ->orderBy('title', 'desc')
             ->paginate(10);
 
         // dump($posts);
