@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Scopes\PublishedWithinThirtyDaysScope;
+use App\Models\Traits\PostScopes;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
     /** @use HasFactory<\Database\Factories\PostFactory> */
-    use HasFactory, SoftDeletes, Prunable;
+    use HasFactory, SoftDeletes, Prunable, PostScopes;
 
     protected $fillable = [
         'user_id',
@@ -66,29 +67,29 @@ class Post extends Model
     // }
 
 
-    /**
-     * Local Scope a query to only published posts.
-     */
-    #[Scope]
-    protected function published(Builder $query): void
-    {
-        $query->where('is_published', true);
-    }
+    // /**
+    //  * Local Scope a query to only published posts.
+    //  */
+    // #[Scope]
+    // protected function published(Builder $query): void
+    // {
+    //     $query->where('is_published', true);
+    // }
 
-    /**
-     * Local Scope a query to user data.
-     */
-    #[Scope]
-    protected function withUserData(Builder $query): void
-    {
-        $query->join('users', 'posts.user_id', '=', 'users.id')
-            ->select('posts.*', 'users.name', 'users.email');
-    }
+    // /**
+    //  * Local Scope a query to user data.
+    //  */
+    // #[Scope]
+    // protected function withUserData(Builder $query): void
+    // {
+    //     $query->join('users', 'posts.user_id', '=', 'users.id')
+    //         ->select('posts.*', 'users.name', 'users.email');
+    // }
 
-    #[Scope]
-    protected function publishedByUser(Builder $query, $userId): void
-    {
-        $query->where('user_id', $userId)
-            ->whereNotNull('created_at');
-    }
+    // #[Scope]
+    // protected function publishedByUser(Builder $query, $userId): void
+    // {
+    //     $query->where('user_id', $userId)
+    //         ->whereNotNull('created_at');
+    // }
 }
