@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\PublishedWithinThirtyDaysScope;
+use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +11,7 @@ use Illuminate\Database\Eloquent\Prunable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[ScopedBy([PublishedWithinThirtyDaysScope::class])]
 class Post extends Model
 {
     /** @use HasFactory<\Database\Factories\PostFactory> */
@@ -49,4 +52,15 @@ class Post extends Model
     {
         return static::where('deleted_at', '<=', now()->subMonth());
     }
+
+    /**
+     * manually register the global scope by overriding the model's 
+     * booted method and invoke the model's addGlobalScope method. 
+     * The addGlobalScope method accepts an instance of your scope 
+     * as its only argument
+     */
+    // protected static function booted(): void
+    // {
+    //     static::addGlobalScope(new PublishedWithinThirtyDaysScope());
+    // }
 }

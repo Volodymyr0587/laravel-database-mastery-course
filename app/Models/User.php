@@ -3,10 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Scopes\BalanceVerifiedScope;
+use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+// #[ScopedBy([BalanceVerifiedScope::class])]
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -45,4 +48,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * manually register the global scope by overriding the model's 
+     * booted method and invoke the model's addGlobalScope method. 
+     * The addGlobalScope method accepts an instance of your scope 
+     * as its only argument
+     */
+    // protected static function booted(): void
+    // {
+    //     static::addGlobalScope(new BalanceVerifiedScope());
+    // }
 }
