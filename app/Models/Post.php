@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Scopes\PublishedWithinThirtyDaysScope;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -63,4 +64,24 @@ class Post extends Model
     // {
     //     static::addGlobalScope(new PublishedWithinThirtyDaysScope());
     // }
+
+
+    /**
+     * Local Scope a query to only published posts.
+     */
+    #[Scope]
+    protected function published(Builder $query): void
+    {
+        $query->where('is_published', true);
+    }
+
+    /**
+     * Local Scope a query to user data.
+     */
+    #[Scope]
+    protected function withUserData(Builder $query): void
+    {
+        $query->join('users', 'posts.user_id', '=', 'users.id')
+            ->select('posts.*', 'users.name', 'users.email');
+    }
 }

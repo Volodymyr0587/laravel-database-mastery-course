@@ -13,6 +13,6 @@ class PublishedWithinThirtyDaysScope implements Scope
      */
     public function apply(Builder $builder, Model $model): void
     {
-        $builder->where('created_at', '>=', now()->subDays(30));
+        $builder->where($model->getTable() . '.created_at', '>=', now()->subDays(30));
     }
 }
