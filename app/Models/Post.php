@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Prunable;
@@ -44,7 +45,7 @@ class Post extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    public function prunable()
+    public function prunable(): Builder
     {
         return static::where('deleted_at', '<=', now()->subMonth());
     }
