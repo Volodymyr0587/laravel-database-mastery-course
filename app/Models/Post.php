@@ -84,4 +84,11 @@ class Post extends Model
         $query->join('users', 'posts.user_id', '=', 'users.id')
             ->select('posts.*', 'users.name', 'users.email');
     }
+
+    #[Scope]
+    protected function publishedByUser(Builder $query, $userId): void
+    {
+        $query->where('user_id', $userId)
+            ->whereNotNull('created_at');
+    }
 }
