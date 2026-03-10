@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('categories')
+        $posts = Post::with('tags')
             ->where('is_published', true)
             ->where('min_to_read', '>', 5)
             ->orderBy('title', 'desc')

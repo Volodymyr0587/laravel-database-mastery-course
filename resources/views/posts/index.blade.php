@@ -41,13 +41,13 @@
                         </span>
                     </div>
 
-                    {{-- Category badge (optional) --}}
-                    @if ($categories = $post->categories)
+                    {{-- Tag badge (optional) --}}
+                    @if ($tags = $post->tags)
                         <div>
-                            @foreach ($categories as $category)
+                            @foreach ($tags as $tag)
                                 <span
                                     class="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                    {{ $category->name }}
+                                    {{ $tag->name }}
                                 </span>
                             @endforeach
                         </div>

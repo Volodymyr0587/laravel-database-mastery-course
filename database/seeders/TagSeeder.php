@@ -2,17 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
-class CategorySeeder extends Seeder
+class TagSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $categories = [
+        $tags = [
             'Laravel',
             'PHP',
             'Databases',
@@ -23,8 +24,11 @@ class CategorySeeder extends Seeder
             'Design Patterns',
         ];
 
-        foreach ($categories as $name) {
-            Category::firstOrCreate(['name' => $name]);
+        foreach ($tags as $name) {
+            Tag::firstOrCreate([
+                'name' => $name,
+                'slug' => Str::slug($name),
+            ]);
         }
 
     }

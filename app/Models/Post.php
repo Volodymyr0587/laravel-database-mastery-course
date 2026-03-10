@@ -52,9 +52,9 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function categories(): BelongsToMany
+    public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Tag::class);
     }
 
     public function prunable(): Builder
