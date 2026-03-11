@@ -73,6 +73,25 @@ class User extends Authenticatable
             'id'
         );
     }
+
+    /**
+     * Get the latest job of the user.
+     * @return HasOne<Job, User>
+     */
+    public function latestJob(): HasOne
+    {
+        return $this->hasOne(Job::class)->latestOfMany();
+    }
+
+    /**
+     * Get the oldest job of the user.
+     * @return HasOne<Job, User>
+     */
+    public function oldestJob(): HasOne
+    {
+        return $this->hasOne(Job::class)->oldestOfMany();
+    }
+
     /**
      * manually register the global scope by overriding the model's 
      * booted method and invoke the model's addGlobalScope method. 
