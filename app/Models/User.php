@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -61,6 +62,17 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function companyPhoneNumber(): HasOneThrough
+    {
+        return $this->hasOneThrough(
+            PhoneNumber::class,
+            Company::class,
+            'user_id',
+            'company_id',
+            'id',
+            'id'
+        );
+    }
     /**
      * manually register the global scope by overriding the model's 
      * booted method and invoke the model's addGlobalScope method. 
