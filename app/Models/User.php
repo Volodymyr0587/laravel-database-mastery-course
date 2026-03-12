@@ -98,6 +98,18 @@ class User extends Authenticatable
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    public function latestImage(): MorphOne
+    {
+        return $this->morphOne(Image::class, 'imageable')
+            ->latestOfMany();
+    }
+
+    public function oldestImage(): MorphOne
+    {
+        return $this->morphOne(Image::class, 'imageable')
+            ->oldestOfMany();
+    }
+
     /**
      * manually register the global scope by overriding the model's 
      * booted method and invoke the model's addGlobalScope method. 
