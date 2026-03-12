@@ -20,7 +20,8 @@
                         {{ $post->title }}
                     </a>
                 </h2>
-
+                {{-- -Image --}}
+                {{-- <img src="{{ $post->image ?? 'https://picsum.photos/200/300' }}" class="w-full" alt=""> --}}
                 {{-- Excerpt --}}
                 <p class="text-lg text-gray-400 leading-relaxed">
                     {{ $post->description }}
